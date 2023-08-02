@@ -1,10 +1,10 @@
-while True:
-    num1 = input('Digite um número: ')
-    operador = input('Digite um operador (+-/*): ')
-    num2 = input('Digite outro número: ')
+print('----- Calculadora by Telmano V1.0 -----')
 
-    num1 = float(num1)
-    num2 = float(num2)
+
+while True:
+    num1 = float(input('Digite um número: '))
+    operador = input('Digite um operador (+-/*): ')
+    num2 = float(input('Digite outro número: '))
 
     soma = num1 + num2
     subtracao = num1 - num2
