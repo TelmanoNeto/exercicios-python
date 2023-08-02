@@ -2,27 +2,49 @@ print('----- Calculadora by Telmano V1.0 -----')
 
 
 while True:
-    num1 = float(input('Digite um número: '))
+    num1 = input('Digite um número: ')
     operador = input('Digite um operador (+-/*): ')
-    num2 = float(input('Digite outro número: '))
+    num2 = input('Digite outro número: ')
 
-    soma = num1 + num2
-    subtracao = num1 - num2
-    divisao = num1 / num2
-    multiplicacao = num1 * num2
+    numeros_validos = None
+
+    try:
+        num1_float = float(num1)
+        num2_float= float(num2)
+        numeros_validos = True
+    except:
+        numeros_validos = None
+    
+    if numeros_validos is None:
+        print('Um ou ambos os números digitado(s) é/são inválido(s).')
+        continue
+
+    operadores_permitidos = '+-/*'
+
+    if operador not in operadores_permitidos:
+        print('Operador inválido.')
+        continue
+
+    if len(operador) > 1:
+        print('Digite apenas um operador.')
+        continue
+
+    soma = num1_float + num2_float
+    subtracao = num1_float - num2_float
+    divisao = num1_float / num2_float
+    multiplicacao = num1_float * num2_float
 
     if operador == '+':
-        print(f'{soma:.2f}')
+        print(f'Resultado: {soma:.2f}')
     elif operador == '-':
-        print(f'{subtracao:.2f}')
+        print(f'Resultado: {subtracao:.2f}')
     elif operador == '/':
-        print(f'{divisao:.2f}')
+        print(f'Resultado: {divisao:.2f}')
     elif operador == '*':
-        print(f'{multiplicacao:.2f}')
-    else:
-        print('Impossível realizar essa operação')
+        print(f'Resultado: {multiplicacao:.2f}')
 
-    sair = input('Deseja sair? [s]im  ou[n]ão: ').lower().startswith('s')
-    
+    sair = input('Deseja sair? [s]im ou [n]ão: ').lower().startswith('s')
+
     if sair is True:
         break
+        
