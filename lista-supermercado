@@ -1,0 +1,44 @@
+import os
+
+lista = []
+
+while True:
+    print('Selecione uma opção:')
+    opcao = input('[i]nserir  [a]pagar  [l]istar \n')
+
+    if opcao == 'i':
+        os.system('cls') or None
+        item = input('Qual ítem você deseja adicionar? \n')
+        lista.append(item)
+        os.system('cls') or None
+
+    elif opcao == 'a':
+        
+        indice_str = input('Qual índice você deseja deletar?\n')
+
+        try:
+            indice = int(indice_str)
+            del lista[indice]
+            
+        except ValueError:
+            print('Por favor digite número int.')
+        except IndexError:
+            print('Índice não existe na lista')
+        except Exception:
+            print('Erro desconhecido')
+        
+    elif opcao == 'l':
+        os.system('cls') or None
+
+        if len(lista) == 0:
+            print('Nada para listar')
+
+        for itens in enumerate(lista):
+            indice, nome = itens
+            print(indice, nome)
+    else:
+        print(
+              'Por favor, selecione uma opção válida \
+              ("i", "a" ou "l").'
+              )
+        
