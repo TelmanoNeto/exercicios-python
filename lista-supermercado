@@ -8,7 +8,7 @@ while True:
 
     if opcao == 'i':
         os.system('cls') or None
-        item = input('Qual ítem você deseja adicionar? \n')
+        item = input('Qual item você deseja adicionar? \n')
         lista.append(item)
         os.system('cls') or None
 
@@ -21,7 +21,7 @@ while True:
             del lista[indice]
             
         except ValueError:
-            print('Por favor digite número int.')
+            print('Por favor digite número inteiro.')
         except IndexError:
             print('Índice não existe na lista')
         except Exception:
@@ -41,4 +41,3 @@ while True:
               'Por favor, selecione uma opção válida \
               ("i", "a" ou "l").'
               )
-        
